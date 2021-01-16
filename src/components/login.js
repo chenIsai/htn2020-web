@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import Wrapper from "./wrapper";
+import Form from "./form";
 import Input from "./input";
 
 const LoginForm = styled.div`
@@ -20,11 +22,14 @@ const Login = () => {
   }
 
   return (
-    <LoginForm>
-      <Input type="Text" placeholder="Username"/>
-      <Input type="text" placeholder="Password"/>
-      <button>Login</button>
-    </LoginForm>
+    <Wrapper>
+      <Form>
+        <Input type="text" placeholder="Username"/>
+        <Input type="password" placeholder="Password"/>
+        <button>Login</button>
+      </Form>
+      <a href="/#/register">Register</a>
+    </Wrapper>
   )
 }
 
