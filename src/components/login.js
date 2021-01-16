@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import Input from "./input";
 
 const LoginForm = styled.div`
   display: flex;
@@ -8,11 +9,6 @@ const LoginForm = styled.div`
   align-items: center;
   width: 5vh;
   height: 5vh;
-`
-
-const Input = styled.input`
-  border: 1px solid;
-  padding: 10px;
 `
 
 const Login = () => {
@@ -25,10 +21,9 @@ const Login = () => {
 
   return (
     <LoginForm>
-      <Input type="text" placeholder="Email" />
       <Input type="Text" placeholder="Username"/>
       <Input type="text" placeholder="Password"/>
-      <button>Register</button>
+      <button>Login</button>
     </LoginForm>
   )
 }
