@@ -9,6 +9,7 @@ import { Header, SubHeader, InputHeader } from "./header";
 
 import laptop_voice from "../images/laptop_voice.svg"
 import phone_voice from "../images/phone_voice.svg"
+import logo from "../images/gitalk.png"
 
 const InitButton = styled.button`
   padding: 5px;
@@ -38,6 +39,11 @@ const GraphicA = styled.img`
   align-self: flex-start;
 `;
 
+const Logo = styled.img`
+  width: 100px;
+  margin: 20px;
+`;
+
 const GraphicB = styled(GraphicA)`
   align-self: flex-end;
 `;
@@ -47,27 +53,28 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
   const [invalid, setInvalid] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const isValid = () => {
     return prompt.length > 0 && email.length > 6 && token.length > 30;
   }
 
   const initUser = async () => {
-    console.log("initialize user");
     if (! isValid() ) {
-      setInvalid( false );
+      setInvalid( true );
     } else {
-      console.log("POST to backend")
       try {
-        await axios.post(
+        const res = await axios.post(
           "https://htn2020.herokuapp.com/",
           {prompt: prompt, email: email, token: token}
         )
+        if (res.status === 200) {
+          setSuccess(true)
+        }
       } catch (err) {
         console.log(err)
       }
     }
-
   }
 
   return (
