@@ -3,50 +3,13 @@ import axios from "axios";
 import styled from "styled-components";
 import PageWrapper from "./pageWrapper";
 import FormWrapper from "./formWrapper"
-import Form from "./form";
-import Input from "./input";
+import { Form, Input, InitButton, InvalidText} from "./form";
 import { Header, SubHeader, InputHeader } from "./header";
+import { GraphicA, GraphicB } from "./graphic";
 
 import laptop_voice from "../images/laptop_voice.svg"
 import phone_voice from "../images/phone_voice.svg"
 import logo from "../images/gitalk.png"
-
-const InitButton = styled.button`
-  padding: 10px;
-  width: 200px;
-  background-color: black;
-  color: #ccc;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  font-family: "Open Sans";
-  transition: filter 150ms;
-
-  &:hover {
-    filter: brightness(1.2);
-    cursor: pointer;
-  }
-`;
-
-const InvalidText = styled.p`
-  font-family: "Ubuntu";
-  color: red;
-`;
-
-const GraphicA = styled.img`
-  width: 45vh;
-  margin: 20px 0px;
-  align-self: flex-start;
-`;
-
-const Logo = styled.img`
-  width: 100px;
-  margin: 20px;
-`;
-
-const GraphicB = styled(GraphicA)`
-  align-self: flex-end;
-`;
 
 const Initialize = () => {
   const [prompt, setPrompt] = useState("");
