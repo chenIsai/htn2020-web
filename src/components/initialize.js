@@ -65,7 +65,7 @@ const Initialize = () => {
     } else {
       try {
         const res = await axios.post(
-          "https://htn2020.herokuapp.com/",
+          "https://htn2020.herokuapp.com/user/init",
           {prompt: prompt, email: email, token: token}
         )
         if (res.status === 200) {
