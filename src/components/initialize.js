@@ -56,7 +56,7 @@ const Initialize = () => {
   const [success, setSuccess] = useState(false);
 
   const isValid = () => {
-    return prompt.length > 0 && email.length > 6 && token.length > 30;
+    return prompt.length > 0 && email.length > 6 && token.length > 20;
   }
 
   const initUser = async () => {
