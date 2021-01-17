@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import styled from "styled-components";
 import Wrapper from "./wrapper";
+import FormWrapper from "./formWrapper"
 import Form from "./form";
 import Input from "./input";
 import { Header, SubHeader, InputHeader } from "./header";
@@ -22,6 +23,7 @@ const InitButton = styled.button`
 
   &:hover {
     filter: brightness(1.2);
+    cursor: pointer;
   }
 `;
 
@@ -31,7 +33,7 @@ const InvalidText = styled.p`
 `;
 
 const GraphicA = styled.img`
-  width: 40vh;
+  width: 45vh;
   margin: 20px 0px;
   align-self: flex-start;
 `;
@@ -56,14 +58,14 @@ const Login = () => {
       setInvalid( false );
     } else {
       console.log("POST to backend")
-      // try {
-      //   axios.post(
-      //     URL,
-      //     {prompt, email, token}
-      //   )
-      // } catch {
-
-      // }
+      try {
+        await axios.post(
+          "https://htn2020.herokuapp.com/",
+          {prompt: prompt, email: email, token: token}
+        )
+      } catch (err) {
+        console.log(err)
+      }
     }
 
   }
@@ -71,41 +73,43 @@ const Login = () => {
   return (
     <Wrapper>
       <GraphicA src={laptop_voice}/>
-      <Form>
-        <Header>GITALK</Header>
-        <SubHeader>Speedrun your next hackathon project.</SubHeader>
-        
-        <InputHeader>
-          EMAIL
-        </InputHeader>
-        <Input 
-          type="email" 
-          placeholder="sample@gmail.com"
-          value={email}
-          onChange={(e) => {setEmail(e.target.value)}}
-        />
-        <InputHeader>
-          GITHUB TOKEN
-        </InputHeader>
-        <Input 
-          type="text"
-          placeholder="xz3m2r9..."
-          value={token}
-          onChange={(e) => {setToken(e.target.value)}}
-        />
-        <InputHeader>
-          UNIQUE VOICE ID
-        </InputHeader>
-        <Input 
-          type="text" 
-          placeholder="log me in"
-          value={prompt}
-          onChange={(e) => {setPrompt(e.target.value)}}
-        />
-        
-        <InitButton onClick={() => initUser()}>INITIALIZE</InitButton>
-        {invalid && <InvalidText>Invalid input, please try again.</InvalidText>}
-      </Form>
+      <FormWrapper>
+        <Form>
+          <Header>GITALK</Header>
+          <SubHeader>Speedrun your next hackathon project.</SubHeader>
+          
+          <InputHeader>
+            EMAIL
+          </InputHeader>
+          <Input 
+            type="email" 
+            placeholder="sample@gmail.com"
+            value={email}
+            onChange={(e) => {setEmail(e.target.value)}}
+          />
+          <InputHeader>
+            GITHUB TOKEN
+          </InputHeader>
+          <Input 
+            type="text"
+            placeholder="xz3m2r9..."
+            value={token}
+            onChange={(e) => {setToken(e.target.value)}}
+          />
+          <InputHeader>
+            UNIQUE VOICE ID
+          </InputHeader>
+          <Input 
+            type="text" 
+            placeholder="log me in"
+            value={prompt}
+            onChange={(e) => {setPrompt(e.target.value)}}
+          />
+          
+          <InitButton onClick={() => initUser()}>INITIALIZE</InitButton>
+          {invalid && <InvalidText>Invalid input, please try again.</InvalidText>}
+        </Form>
+      </FormWrapper>
       <GraphicB src={phone_voice}/>
       {//<a href="/#/register">Register</a>\
       }
