@@ -1,6 +1,7 @@
 import React from "react";
 import {HashRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
 import Initialize from "./components/initialize";
+import Authenticated from "./components/authenticated"
 
 function App() {
   return (
@@ -9,10 +10,8 @@ function App() {
         <Route exact path="/">
           <Initialize />
         </Route>
-        <Route path="/details">
-          <div>
-            Placeholder
-          </div>
+        <Route path="/authenticated">
+          <Authenticated />
         </Route>
       </Switch>
     </Router>

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { Redirect } from "react-router"
 import axios from "axios";
 import styled from "styled-components";
+
 import PageWrapper from "./pageWrapper";
 import FormWrapper from "./formWrapper"
 import { Form, Input, InitButton, InvalidText} from "./form";
@@ -16,7 +18,7 @@ const Initialize = () => {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
   const [invalid, setInvalid] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
 
   const isValid = () => {
     return prompt.length > 0 && email.length > 6 && token.length > 20;
@@ -32,7 +34,9 @@ const Initialize = () => {
           {prompt: prompt, email: email, token: token}
         )
         if (res.status === 200) {
-          setSuccess(true)
+          setAuthenticated(true)
+        } else {
+          setInvalid(true);
         }
       } catch (err) {
         console.log(err)
@@ -79,6 +83,7 @@ const Initialize = () => {
         </Form>
       </FormWrapper>
       <GraphicB src={phone_voice}/>
+      {authenticated ? <Redirect to='/authenticated' /> : <></>}
     </PageWrapper>
   )
 }
