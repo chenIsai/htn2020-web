@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import { Redirect } from "react-router"
 import axios from "axios";
-import styled from "styled-components";
 
 import PageWrapper from "./pageWrapper";
 import FormWrapper from "./formWrapper"
@@ -12,7 +11,6 @@ import { GraphicA, GraphicB } from "./graphic";
 
 import laptop_voice from "../images/laptop_voice.svg"
 import phone_voice from "../images/phone_voice.svg"
-import logo from "../images/gitalk.png"
 
 const Initialize = () => {
   const [prompt, setPrompt] = useState("");
@@ -66,7 +64,7 @@ const Initialize = () => {
           </InputHeader>
           <TokenTooltip/>
           <Input 
-            type="text"
+            type="password"
             placeholder="xz3m2r9..."
             value={token}
             onChange={(e) => {setToken(e.target.value)}}
