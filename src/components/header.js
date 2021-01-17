@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const Header = styled.h1`
   font-family: "Open Sans";
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 `;
 
 export const SubHeader = styled.p`
   font-family: "Ubuntu";
-  font-size: 16px;
+  font-size: 18px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 
 export const InputHeader = styled.h2`

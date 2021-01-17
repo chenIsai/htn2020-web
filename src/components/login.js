@@ -74,10 +74,9 @@ const Login = () => {
     <Wrapper>
       <GraphicA src={laptop_voice}/>
       <FormWrapper>
+        <Header>GITALK</Header>
+        <SubHeader>Speedrun your next hackathon project.</SubHeader>
         <Form>
-          <Header>GITALK</Header>
-          <SubHeader>Speedrun your next hackathon project.</SubHeader>
-          
           <InputHeader>
             EMAIL
           </InputHeader>
