@@ -1,6 +1,6 @@
 import React from "react";
 import {HashRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
-import Login from "./components/login";
+import Initialize from "./components/initialize";
 import Register from "./components/register";
 
 function App() {
@@ -8,10 +8,7 @@ function App() {
     <Router basename="/">
       <Switch>
         <Route exact path="/">
-          <Redirect to="/login"/>
-        </Route>
-        <Route path="/login">
-          <Login />
+          <Initialize />
         </Route>
         <Route path="/register">
           <Register />

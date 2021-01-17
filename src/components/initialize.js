@@ -48,7 +48,7 @@ const GraphicB = styled(GraphicA)`
   align-self: flex-end;
 `;
 
-const Login = () => {
+const Initialize = () => {
   const [prompt, setPrompt] = useState("");
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
@@ -123,4 +123,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Initialize;
