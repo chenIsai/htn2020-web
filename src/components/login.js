@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from "axios";
 import styled from "styled-components";
 import Wrapper from "./wrapper";
 import Form from "./form";
@@ -36,9 +37,22 @@ const Login = () => {
     return phrase.length > 0 && email.length > 6 && token.length > 30;
   }
 
-  const initUser = () => {
+  const initUser = async () => {
     console.log("initialize user");
-    setInvalid( ! isValid() );
+    if (! isValid() ) {
+      setInvalid( false );
+    } else {
+      console.log("POST to backend")
+      // try {
+      //   axios.post(
+      //     URL,
+      //     {prompt, email, token}
+      //   )
+      // } catch {
+
+      // }
+    }
+
   }
 
   return (
@@ -53,7 +67,7 @@ const Login = () => {
           type="text" 
           placeholder="log me in"
           value={phrase}
-          onChange={(e) => {setPhrase(e.target.value)}} />
+          onChange={(e) => {setphrase(e.target.value)}} />
         <InputHeader>
           EMAIL
         </InputHeader>
