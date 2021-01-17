@@ -7,6 +7,7 @@ import PageWrapper from "./pageWrapper";
 import FormWrapper from "./formWrapper"
 import { Form, Input, InitButton, InvalidText} from "./form";
 import { Header, SubHeader, InputHeader } from "./header";
+import { TokenTooltip, PromptTooltip } from "./tooltip";
 import { GraphicA, GraphicB } from "./graphic";
 
 import laptop_voice from "../images/laptop_voice.svg"
@@ -63,6 +64,7 @@ const Initialize = () => {
           <InputHeader>
             GITHUB TOKEN
           </InputHeader>
+          <TokenTooltip/>
           <Input 
             type="text"
             placeholder="xz3m2r9..."
@@ -72,6 +74,7 @@ const Initialize = () => {
           <InputHeader>
             UNIQUE VOICE ID
           </InputHeader>
+          <PromptTooltip/>
           <Input 
             type="text" 
             placeholder="log me in"

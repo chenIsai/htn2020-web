@@ -14,8 +14,8 @@ export const SubHeader = styled.p`
 `;
 
 export const InputHeader = styled.h2`
+  display: inline-block;
   font-family: "Open Sans";
   font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 20px 10px 10px 0px;
 `;
