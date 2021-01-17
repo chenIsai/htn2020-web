@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Header = styled.h1`
   font-family: "Open Sans";
   margin: auto;
-  margin-top: 100px;
   margin-bottom: 20px;
 `;
 

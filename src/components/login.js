@@ -6,6 +6,9 @@ import Form from "./form";
 import Input from "./input";
 import { Header, SubHeader, InputHeader } from "./header";
 
+import laptop_voice from "../images/laptop_voice.svg"
+import phone_voice from "../images/phone_voice.svg"
+
 const InitButton = styled.button`
   padding: 5px;
   width: 200px;
@@ -25,6 +28,16 @@ const InitButton = styled.button`
 const InvalidText = styled.p`
   font-family: "Ubuntu";
   color: red;
+`;
+
+const GraphicA = styled.img`
+  width: 40vh;
+  margin: 20px 0px;
+  align-self: flex-start;
+`;
+
+const GraphicB = styled(GraphicA)`
+  align-self: flex-end;
 `;
 
 const Login = () => {
@@ -57,6 +70,7 @@ const Login = () => {
 
   return (
     <Wrapper>
+      <GraphicA src={laptop_voice}/>
       <Form>
         <Header>GITALK</Header>
         <SubHeader>Speedrun your next hackathon project.</SubHeader>
@@ -86,11 +100,13 @@ const Login = () => {
           type="text" 
           placeholder="log me in"
           value={prompt}
-          onChange={(e) => {setPrompt(e.target.value)}} />
+          onChange={(e) => {setPrompt(e.target.value)}}
+        />
         
         <InitButton onClick={() => initUser()}>INITIALIZE</InitButton>
         {invalid && <InvalidText>Invalid input, please try again.</InvalidText>}
       </Form>
+      <GraphicB src={phone_voice}/>
       {//<a href="/#/register">Register</a>\
       }
     </Wrapper>
