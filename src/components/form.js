@@ -3,9 +3,8 @@ import styled from "styled-components";
 const Form = styled.div`
   display: flex;
   flex-flow: column;
-  margin: auto;
-  align-items: center;
-  width: 5vh;
+  margin: 0;
+  min-width: 35vh;
   height: 5vh;
 `
 
