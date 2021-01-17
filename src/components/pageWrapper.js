@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const PageWrapper = styled.div`
   padding: 5% 5%;
   display: flex;
   flex-flow: row;
@@ -10,4 +10,4 @@ const Wrapper = styled.div`
   height: 100%;
 `
 
-export default Wrapper;
+export default PageWrapper;

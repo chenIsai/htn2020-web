@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Wrapper from "./wrapper";
+import PageWrapper from "./pageWrapper";
 import FormWrapper from "./formWrapper"
 import Form from "./form";
 import Input from "./input";
@@ -78,7 +78,7 @@ const Initialize = () => {
   }
 
   return (
-    <Wrapper>
+    <PageWrapper>
       <GraphicA src={laptop_voice}/>
       <FormWrapper>
         <Header>GITALK</Header>
@@ -116,7 +116,7 @@ const Initialize = () => {
         </Form>
       </FormWrapper>
       <GraphicB src={phone_voice}/>
-    </Wrapper>
+    </PageWrapper>
   )
 }
 
