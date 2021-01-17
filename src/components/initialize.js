@@ -12,7 +12,7 @@ import phone_voice from "../images/phone_voice.svg"
 import logo from "../images/gitalk.png"
 
 const InitButton = styled.button`
-  padding: 5px;
+  padding: 10px;
   width: 200px;
   background-color: black;
   color: #ccc;
@@ -111,14 +111,11 @@ const Initialize = () => {
             value={prompt}
             onChange={(e) => {setPrompt(e.target.value)}}
           />
-          
           <InitButton onClick={() => initUser()}>INITIALIZE</InitButton>
           {invalid && <InvalidText>Invalid input, please try again.</InvalidText>}
         </Form>
       </FormWrapper>
       <GraphicB src={phone_voice}/>
-      {//<a href="/#/register">Register</a>\
-      }
     </Wrapper>
   )
 }

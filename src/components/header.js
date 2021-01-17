@@ -10,12 +10,12 @@ export const SubHeader = styled.p`
   font-family: "Ubuntu";
   font-size: 18px;
   margin: auto;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 `;
 
 export const InputHeader = styled.h2`
   font-family: "Open Sans";
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
 `;
