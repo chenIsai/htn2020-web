@@ -28,13 +28,13 @@ const InvalidText = styled.p`
 `;
 
 const Login = () => {
-  const [phrase, setPhrase] = useState("");
+  const [prompt, setPrompt] = useState("");
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
   const [invalid, setInvalid] = useState(false);
 
   const isValid = () => {
-    return phrase.length > 0 && email.length > 6 && token.length > 30;
+    return prompt.length > 0 && email.length > 6 && token.length > 30;
   }
 
   const initUser = async () => {
@@ -60,14 +60,7 @@ const Login = () => {
       <Form>
         <Header>GITALK</Header>
         <SubHeader>Speedrun your next hackathon project.</SubHeader>
-        <InputHeader>
-          UNIQUE VOICE ID
-        </InputHeader>
-        <Input 
-          type="text" 
-          placeholder="log me in"
-          value={phrase}
-          onChange={(e) => {setphrase(e.target.value)}} />
+        
         <InputHeader>
           EMAIL
         </InputHeader>
@@ -86,6 +79,15 @@ const Login = () => {
           value={token}
           onChange={(e) => {setToken(e.target.value)}}
         />
+        <InputHeader>
+          UNIQUE VOICE ID
+        </InputHeader>
+        <Input 
+          type="text" 
+          placeholder="log me in"
+          value={prompt}
+          onChange={(e) => {setPrompt(e.target.value)}} />
+        
         <InitButton onClick={() => initUser()}>INITIALIZE</InitButton>
         {invalid && <InvalidText>Invalid input, please try again.</InvalidText>}
       </Form>
